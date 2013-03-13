@@ -145,6 +145,7 @@ class Gallery_Unit_Test_Controller extends Controller {
       print $e->getTraceAsString() . "\n";
     }
 
+<<<<<<< HEAD
     if (!isset($unit_test)) {
       // If an exception is thrown, it's possible that $unit_test was never set.
       $failed = 1;
@@ -153,6 +154,11 @@ class Gallery_Unit_Test_Controller extends Controller {
       foreach ($unit_test->stats as $class => $stats) {
         $failed += ($stats["failed"] + $stats["errors"]);
       }
+=======
+    $failed = 0;
+    foreach ($unit_test->stats as $class => $stats) {
+      $failed += ($stats["failed"] + $stats["errors"]);
+>>>>>>> 0899528ff5e0057c9bd6436a9e79dc6bac9726d6
     }
     if (PHP_SAPI == 'cli') {
       exit($failed);
